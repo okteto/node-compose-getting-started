@@ -5,12 +5,12 @@ export default class Layout extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <a href="/" className="navbar-brand">
-            My Movie List
-          </a>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="nav-link navbar-brand" href="/"><img src="okteto.png" width="36px" height="36px" /></a>
+          <a class="nav-link navbar-brand" href="/">My Movie List</a>
+          <a class="nav-link navbar-brand" href="add">New Movie</a>
         </nav>
-        <div className="container mt-3">
+        <div class="container mt-3">
         <Outlet />
         </div>  
       </div>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Service from "../service/movies";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class MoviesList extends Component {
   constructor(props) {

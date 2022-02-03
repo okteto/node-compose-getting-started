@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Service from "../service/movies";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class AddMovie extends Component {
     constructor(props) {
@@ -65,12 +64,14 @@ export default class AddMovie extends Component {
 
   render() {
     return (
+      <div className="list row">
+        <div className="col-md-6">
       <div className="submit-form">
         {this.state.submitted ? (
           <div>
             <h4>Success!</h4>
-            <button className="btn btn-success" onClick={this.newMovie}>
-              Add
+            <button className="btn btn-primary" onClick={this.newMovie}>
+              Add new movie
             </button>
           </div>
         ) : (
@@ -100,12 +101,15 @@ export default class AddMovie extends Component {
                 name="description"
               />
             </div>
-            
-            <button onClick={this.saveMovie} className="btn btn-success">
-              Submit
+           
+            <button onClick={this.saveMovie} className="btn btn-primary">
+              Add new movie
             </button>
+           
           </div>
         )}
+      </div>
+      </div>
       </div>
     );
   }
