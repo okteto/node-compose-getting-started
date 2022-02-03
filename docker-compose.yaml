@@ -1,9 +1,21 @@
+endpoints:
+  - service: frontend
+    path: /
+    port: 8080
+  - service: api
+    path: /api
+    port: 3000
 services:
+  web:
+    build: frontend
+    image: okteto.dev/frontend
+    ports:
+    - 8080
   api:
     build: api
     image: okteto.dev/api
     ports:
-    - 3000:3000
+    - 3000
     environment:
       - DB_PASSWORD=passw0rd
       - DB_USER=root
