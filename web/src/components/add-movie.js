@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Service from "../service/movies";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-export default class AddTutorial extends Component {
+export default class AddMovie extends Component {
     constructor(props) {
         super(props);
         this.onChangeTitle = this.onChangeTitle.bind(this);
@@ -31,13 +32,13 @@ export default class AddTutorial extends Component {
         });
       }
 
-  saveMove() {
+  saveMovie() {
     var data = {
       title: this.state.title,
       description: this.state.description,
     };
 
-    Service.create(data)
+    Service.add(data)
       .then((response) => {
         this.setState({
           id: response.data.id,
@@ -99,7 +100,7 @@ export default class AddTutorial extends Component {
                 name="description"
               />
             </div>
-
+            
             <button onClick={this.saveMovie} className="btn btn-success">
               Submit
             </button>

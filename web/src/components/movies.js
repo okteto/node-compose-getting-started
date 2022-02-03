@@ -1,14 +1,14 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Service from "../service/movies";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default class MoviesList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      movies: [],
-      current: null,
-      currentIndex: -1,
+      movies: []
     };
   }
 
@@ -39,10 +39,11 @@ export default class MoviesList extends Component {
             {movies &&
               movies.map((movie, index) => (
                 <li className={"list-group-item "} key={index}>
-                  {movie.title}
+                  {movie.title} - {movie.description}
                 </li>
               ))}
           </ul>
+          <p><Link to={"add"}>Add a new movie to the list</Link></p>
         </div>
       </div>
     );
