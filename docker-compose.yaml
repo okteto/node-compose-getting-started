@@ -1,5 +1,5 @@
 endpoints:
-  - service: frontend
+  - service: web
     path: /
     port: 8080
   - service: api
