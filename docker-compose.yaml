@@ -1,0 +1,14 @@
+services:
+  api:
+    build: api
+    image: okteto.dev/api
+    ports:
+    - 3000:3000
+    environment:
+      - DB_PASSWORD=passw0rd
+      - DB_USER=root
+  mysql:
+    image: mysql:8
+    environment:
+      - MYSQL_ROOT_PASSWORD=passw0rd
+      - MYSQL_DATABASE=okteto

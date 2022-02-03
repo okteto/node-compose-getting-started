@@ -1,0 +1,20 @@
+{
+    "name": "node-compose-getting-started",
+    "version": "1.0.0",
+    "description": "Develop a node application using docker-compose and Okteto",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js",
+        "debug": "node --inspect-brk=0.0.0.0:9229 index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/okteto/node-compose-getting-started.git"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "mysql2": "^2.3.3",
+        "nodemon": "^2.0.2",
+        "sequelize": "^6.15.0"
+    }
+}
