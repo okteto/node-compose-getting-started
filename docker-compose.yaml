@@ -7,7 +7,10 @@ endpoints:
     port: 3000
 services:
   web:
-    build: web
+    build: 
+      context: web
+      args:
+      - REACT_APP_TITLE=$APP_TITLE
     image: okteto.dev/web
     ports:
     - 8080
