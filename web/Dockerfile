@@ -7,7 +7,7 @@ RUN npm install
 
 COPY . .
 
-ARG REACT_APP_TITLE
+ARG APP_TITLE
 RUN --mount=type=cache,target=./node_modules/.cache/webpack npm run build
 
 FROM bitnami/nginx
