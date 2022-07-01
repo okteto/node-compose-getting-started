@@ -1,0 +1,45 @@
+name: node-compose-getting-started
+
+build:
+  api:
+    context: api
+    dockerfile: api/Dockerfile
+    image: okteto.dev/api
+
+  web:
+    context: web
+    dockerfile: web/Dockerfile
+    image: okteto.dev/web
+
+  dev:
+    context: web
+    target: dev
+    dockerfile: web/Dockerfile
+    image: okteto.dev/dev
+
+deploy:
+  compose:
+    file: docker-compose.yaml
+
+dev:
+  api:
+    command: bash
+    workdir: /usr/src/app
+    sync:
+      - api:/usr/src/app
+    forward:
+      - 9229:9229
+      - 8080:8080
+ 
+  web:
+    image: okteto.dev/dev
+    command: bash
+    workdir: /usr/src/app
+    sync:
+      - web:/usr/src/app
+    environment:
+    - HOST=0.0.0.0
+    - PORT=8080
+    forward:
+      - 9230:9229
+

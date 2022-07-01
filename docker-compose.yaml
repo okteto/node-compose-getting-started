@@ -17,6 +17,7 @@ services:
     ports:
     - 3000
     environment:
+      - PORT=3000
       - DB_PASSWORD=passw0rd
       - DB_USER=root
   mysql:
