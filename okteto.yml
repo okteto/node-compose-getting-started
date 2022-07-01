@@ -11,11 +11,11 @@ build:
     dockerfile: web/Dockerfile
     image: okteto.dev/web
 
-  dev:
+  web-dev:
     context: web
     target: dev
     dockerfile: web/Dockerfile
-    image: okteto.dev/dev
+    image: okteto.dev/web-dev
 
 deploy:
   compose:
@@ -32,7 +32,7 @@ dev:
       - 8080:8080
  
   web:
-    image: okteto.dev/dev
+    image: okteto.dev/web-dev
     command: bash
     workdir: /usr/src/app
     sync:
