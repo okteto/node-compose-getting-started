@@ -9,5 +9,5 @@ app.use('/', movies);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
-  console.log('Starting hello-world server...');
+  console.log('Starting movies server...');
 })

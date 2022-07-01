@@ -1,0 +1,27 @@
+build:
+  # Dev image for the web service
+  web-dev:
+    context: web
+    target: dev
+
+deploy:
+  compose:
+    file: docker-compose.yaml
+
+dev:
+  api:
+    command: bash
+    sync:
+      - api:/usr/src/app
+    forward:
+      - 9229:9229
+ 
+  web:
+    image: $OKTETO_BUILD_WEB_DEV_IMAGE
+    command: bash
+    sync:
+      - web:/usr/src/app
+    environment:
+    - HOST=0.0.0.0
+    - PORT=8080
+
