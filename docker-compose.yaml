@@ -8,12 +8,10 @@ endpoints:
 services:
   web:
     build: web
-    image: okteto.dev/web
     ports:
     - 8080
   api:
     build: api
-    image: okteto.dev/api
     ports:
     - 3000
     environment:
