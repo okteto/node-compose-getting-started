@@ -1,9 +1,9 @@
 endpoints:
-  - service: web
-    path: /
+  - path: /
+    service: web
     port: 8080
-  - service: api
-    path: /api
+  - path: /api
+    service: api
     port: 3000
 services:
   web:
