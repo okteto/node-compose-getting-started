@@ -13,9 +13,8 @@ jobs:
         token: ${{ secrets.OKTETO_TOKEN }}
 
     - name: Deploy preview environment
-      uses: okteto/deploy-preview@latest
-      env:
-       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: okteto/pipeline@release/2.15-improved-error-logging
       with:
-        name: pr-${{ github.event.number }}-cindylopez
+        name: pr-${{ github.event.number }}-jlopezbarb
         timeout: 15m
+        loglevel: debug
